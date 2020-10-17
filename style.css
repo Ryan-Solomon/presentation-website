@@ -1,7 +1,7 @@
 :root {
   --primary-color: #333333;
   --secondary-color: #27aedf;
-  --animate-speed: 1s;
+  --animate-speed: 0.5s;
 }
 
 body {
@@ -40,10 +40,12 @@ body {
 
 .page h1 {
   font-size: 3rem;
+  animation: headerAnimation forwards var(--animate-speed) ease-in;
 }
 
 .page p {
   font-size: 1.3rem;
+  animation: paragraphAnimation forwards var(--animate-speed) ease-in;
 }
 
 .btn {
@@ -56,6 +58,7 @@ body {
   color: #333;
   border: none;
   transition: all 0.3s ease-in;
+  animation: buttonAnimation forwards var(--animate-speed) ease-in;
 }
 
 .btn-dark {
@@ -67,4 +70,36 @@ body {
 .btn-dark:hover {
   background-color: var(--secondary-color);
   color: #fff;
+}
+
+@keyframes headerAnimation {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes paragraphAnimation {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes buttonAnimation {
+  0% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
